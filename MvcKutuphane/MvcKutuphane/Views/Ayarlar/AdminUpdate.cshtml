@@ -1,0 +1,27 @@
+﻿@model MvcKutuphane.Models.Entity.TBLADMİN
+@{
+    ViewBag.Title = "AdminUpdate";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>AdminUpdate</h2>
+
+@using (Html.BeginForm("AdminUpdate", "Ayarlar", FormMethod.Post)) //Bu form Hangi ActionResult'ı Kapsıyor? AdminUpdate. Hangi Controller içinde? Ayarlar. Bu form hangi methodta çalışacak? FormMethod.Post
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(k => k.Kullanici, new { @class = "form-control" })
+        <br />
+        <label>Yetkisi</label>
+        @Html.TextBoxFor(k => k.Yetki, new { @class = "form-control" })
+    </div>
+    <div>
+
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}

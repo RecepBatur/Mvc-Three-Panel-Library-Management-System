@@ -1,0 +1,55 @@
+﻿@model MvcKutuphane.Models.Entity.TBLKİTAP
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-top:15px">
+            <label>Kitap ID</label>
+            @*@Html.LabelFor(y => y.ID)*@
+            @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Kitap ADI</label>
+            @*@Html.LabelFor(y => y.AD)*@
+            @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Kategori</label>
+            @*@Html.LabelFor(y => y.SOYAD)*@
+            @Html.DropDownListFor(k => k.TBL_KATEGORİ.ID, (List<SelectListItem>)ViewBag.ktp1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Yazarı</label>
+            @*@Html.LabelFor(y => y.DETAY)*@
+            @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.yzr1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Basım Yılı</label>
+            @*@Html.LabelFor(y => y.DETAY)*@
+            @Html.TextAreaFor(k => k.BASIMYIL, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Yayınevi</label>
+            @*@Html.LabelFor(y => y.DETAY)*@
+            @Html.TextAreaFor(k => k.YAYINEVİ, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Sayfa Sayısı</label>
+            @*@Html.LabelFor(y => y.DETAY)*@
+            @Html.TextAreaFor(k => k.SAYFA, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom: 15px">
+            <label>Kitap Görseli</label>
+            @*@Html.LabelFor(y => y.DETAY)*@
+            @Html.TextAreaFor(k => k.KİTAPRESİM, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Kitap Bilgilerini Güncelle</button>
+        @*<input type="hidden" name="Durum" value="True" />*@ <!--Kitabın durumunu true olarak atadık ekleyince. Gizli bir şekilde.-->
+    </div>
+}
+

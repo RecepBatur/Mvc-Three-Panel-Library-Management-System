@@ -1,0 +1,53 @@
+﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UyeGuncelle", "Uyeler", FormMethod.Post)) //Bu form Hangi ActionResult'ı Kapsıyor? PersonelGuncelle. Hangi Controller içinde? Personel. Bu form hangi methodta çalışacak? FormMethod.Post
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>ÜYE ADI</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>ÜYE SOYADI</label>
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>MAİL ADRESİ</label>
+        @Html.TextBoxFor(k => k.MAİL, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>KULLANICI ADI</label>
+        @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>ŞİFRE</label>
+        @Html.TextBoxFor(k => k.SİFRE, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>FOTOĞRAF LİNKİ</label>
+        @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>TELEFON</label>
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>OKUL</label>
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control" })
+
+
+    </div>
+    <div>
+
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+

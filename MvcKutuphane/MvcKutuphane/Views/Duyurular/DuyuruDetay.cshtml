@@ -1,0 +1,28 @@
+﻿@model MvcKutuphane.Models.Entity.TBLDUYURULAR
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyurular", FormMethod.Post)) //Bu form Hangi ActionResult'ı Kapsıyor? PersonelGuncelle. Hangi Controller içinde? Personel. Bu form hangi methodta çalışacak? FormMethod.Post
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>Duyuru Kategori</label>
+        @Html.TextBoxFor(k => k.KATEGORİ, new { @class = "form-control" })
+        <br />
+        <label>Duyuru İçerik</label>
+        @Html.TextAreaFor(k => k.İCERİK, new { @class = "form-control" })
+        <br />
+        <label>Duyuru Tarih</label>
+        @Html.TextBoxFor(k => k.TARİH, "{0: dd.MM.yyyy}" , new { @class = "form-control" })
+    </div>
+    <div>
+
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
